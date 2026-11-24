@@ -25,11 +25,11 @@ def project_scale(current_spend, target_spend, current_roas, decay_factor=0.85):
 
 def main():
     parser = argparse.ArgumentParser(description="TAVARDT USA: Paid Media ROI Intelligence and Budget Scaling Engine")
-    parser.add_argument("--spend", type=float, required=True, help="Current ad spend (USD)")
-    parser.add_argument("--revenue", type=float, required=True, help="Current generated revenue (USD)")
-    parser.add_argument("--target-spend", type=float, help="Projected target ad spend (USD)")
-    parser.add_argument("--decay", type=float, default=0.85, help="Diminishing returns decay coefficient (default: 0.85)")
-    parser.add_argument("--json", action="store_true", help="Output results in JSON format")
+    parser.add_argument("-spend", "--spend", type=float, required=True, help="Current ad spend (USD)")
+    parser.add_argument("-revenue", "--revenue", type=float, required=True, help="Current generated revenue (USD)")
+    parser.add_argument("-target-spend", "--target-spend", type=float, help="Projected target ad spend (USD)")
+    parser.add_argument("-decay", "--decay", type=float, default=0.85, help="Diminishing returns decay coefficient (default: 0.85)")
+    parser.add_argument("-json", "--json", action="store_true", help="Output results in JSON format")
     args = parser.parse_args()
 
     base = calculate_base_metrics(args.spend, args.revenue)
